@@ -1,3 +1,9 @@
+
+/* =====================================
+   CUTE COFFEE SHOP 🍮
+   Japanese Cafe / Soft Brown & Cream
+   ===================================== */
+
 * {
     box-sizing: border-box;
 }
@@ -7,187 +13,391 @@ body {
     min-height: 100vh;
     padding: 40px 20px;
     font-family: "Segoe UI", Tahoma, sans-serif;
-    background:
-        radial-gradient(circle at top, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0) 30%),
-        linear-gradient(135deg, #f7f0ea 0%, #f0e3d6 45%, #e7d2bb 100%);
-    color: #3f2a1d;
+    background-color: #f8eee4;
+    background-image:
+        radial-gradient(#e8cdb7 1px, transparent 1px);
+    background-size: 22px 22px;
+    color: #593e30;
 }
+
+/* ===== MAIN CONTAINER ===== */
 
 .container {
     max-width: 900px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.9);
-    border: 1px solid rgba(121, 84, 58, 0.08);
-    border-radius: 26px;
     padding: 32px 28px;
-    box-shadow: 0 24px 50px rgba(97, 59, 35, 0.14);
-    backdrop-filter: blur(4px);
+    background: #fffaf4;
+    border: 2px solid #8b6048;
+    border-radius: 22px;
+    box-shadow: 5px 5px 0 #c99e7d;
+    position: relative;
 }
+
+/* Decorative corner */
+.container::before {
+    content: "☕";
+    position: absolute;
+    top: -19px;
+    right: 25px;
+    background: #fff0dc;
+    border: 2px solid #8b6048;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    transform: rotate(10deg);
+}
+
+/* ===== TITLE ===== */
 
 h1 {
     margin: 0 0 8px;
     text-align: center;
-    font-size: 2.6rem;
-    color: #563a2e;
-    letter-spacing: 0.05em;
+    font-size: 2.1rem;
+    color: #70452f;
+    letter-spacing: 0.03em;
+    text-shadow: 2px 2px 0 #f3d9c2;
 }
 
-h2 {
-    margin: 0 0 18px;
-    color: #553626;
-    font-size: 1.7rem;
+h1::after {
+    content: "♡ fresh coffee, happy day ♡";
+    display: block;
+    margin-top: 4px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: #b17c65;
+    text-shadow: none;
 }
+
+/* ===== SECTION HEADINGS ===== */
+
+h2 {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 25px 0 16px;
+    padding: 9px 14px;
+    width: fit-content;
+    color: #70452f;
+    font-size: 1.25rem;
+    background: #f9e7d7;
+    border: 1.5px solid #bd8c6c;
+    border-radius: 12px;
+    box-shadow: 2px 3px 0 #e2bfa3;
+}
+
+h2:first-of-type::before {
+    content: "✿";
+    color: #bd8065;
+}
+
+h2:nth-of-type(2)::before {
+    content: "♡";
+    color: #bd8065;
+}
+
+/* ===== PRODUCT & ORDER LIST ===== */
 
 #productList,
 #orderList {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
 }
 
-.product,
-.order-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    padding: 16px 18px;
-    border-radius: 18px;
-    background: linear-gradient(135deg, #fffdfb 0%, #fff6ee 100%);
-    border: 1px solid #eddcc9;
-    box-shadow: 0 10px 24px rgba(96, 63, 41, 0.06);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+/* ===== PRODUCT CARD ===== */
 
 .product {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    gap: 14px;
-    background: linear-gradient(135deg, #fffaf5 0%, #fdf1e7 100%);
+    gap: 12px;
+    padding: 15px 17px;
+    background: #fff7ed;
+    border: 2px solid #c99a76;
+    border-radius: 16px;
+    box-shadow: 3px 3px 0 #ead1bb;
+    transition: 0.2s ease;
+    position: relative;
 }
 
-.product:hover,
-.order-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 30px rgba(102, 66, 42, 0.1);
+/* Cute decoration */
+.product::after {
+    content: "✦";
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    color: #d7a27f;
+    font-size: 15px;
 }
+
+.product:hover {
+    transform: translateY(-2px);
+    box-shadow: 4px 5px 0 #d8b092;
+    border-color: #9b6748;
+    background: #fffaf5;
+}
+
+/* ===== PRODUCT INFO ===== */
 
 .product-info {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 4px;
 }
 
 .product h3 {
     margin: 0;
-    font-size: 1.25rem;
-    color: #422d23;
+    padding: 0;
+    background: transparent;
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: #65412f;
 }
 
 .product p {
     margin: 0;
-    color: #7b5c4a;
-    font-size: 0.95rem;
+    color: #98745e;
+    font-size: 0.9rem;
 }
+
+/* ===== PRODUCT CONTROLS ===== */
 
 .product-controls {
     display: flex;
     flex-wrap: wrap;
-    gap: 14px;
+    align-items: flex-end;
+    gap: 10px;
 }
 
 .product-controls label {
     display: flex;
     flex-direction: column;
-    gap: 7px;
-    font-size: 0.8rem;
-    color: #5a4337;
+    gap: 5px;
+    font-size: 0.78rem;
+    color: #785640;
     font-weight: 700;
 }
+
+/* ===== SELECT ===== */
 
 .product-controls select,
 select {
-    padding: 10px 12px;
-    border: 1px solid #d9c5b2;
-    border-radius: 12px;
-    background: white;
-    color: #3e2d22;
-    font-size: 1rem;
-    box-shadow: inset 0 1px 2px rgba(0,0,0,0.03);
+    min-height: 37px;
+    padding: 7px 11px;
+    border: 1.5px solid #bd9476;
+    border-radius: 10px;
+    background: #fffdf9;
+    color: #593e30;
+    font-family: inherit;
+    font-size: 0.88rem;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 2px 2px 0 #ead4c0;
+    transition: 0.2s ease;
 }
 
 .product-controls select {
-    min-width: 150px;
+    min-width: 135px;
 }
 
-.product button,
-.order-item button,
-.confirm {
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: 700;
-    transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+.product-controls select:focus,
+select:focus {
+    border-color: #9b6748;
+    box-shadow: 0 0 0 3px #f3dfce;
 }
+
+/* ===== BUTTONS ===== */
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: 1.5px solid #784b34;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: 0.2s ease;
+}
+
+/* Add / Remove buttons */
 
 .product button,
 .order-item button {
-    padding: 10px 16px;
-    background: linear-gradient(135deg, #b86d41 0%, #9a5332 100%);
-    color: white;
-    box-shadow: 0 8px 18px rgba(148, 88, 49, 0.22);
+    padding: 8px 15px;
+    background: #b97953;
+    color: #fffaf4;
+    font-size: 0.85rem;
+    border: 1.5px solid #8d573a;
+    border-radius: 10px;
+    box-shadow: 2px 3px 0 #8d573a;
 }
 
 .product button:hover,
-.order-item button:hover,
-.confirm:hover {
-    opacity: 0.98;
+.order-item button:hover {
+    background: #9f6242;
     transform: translateY(-1px);
+    box-shadow: 2px 4px 0 #784b34;
+}
+
+button:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+/* ===== ORDER ITEM ===== */
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 15px;
+    background: #fff2f0;
+    border: 2px solid #d6a39a;
+    border-radius: 14px;
+    box-shadow: 3px 3px 0 #efd0c9;
+    transition: 0.2s ease;
+}
+
+.order-item:hover {
+    transform: translateY(-2px);
+    background: #fff7f5;
+    border-color: #bd8175;
 }
 
 .order-item span:first-child {
     flex: 1;
-    font-weight: 700;
-    color: #3b2d26;
+    font-weight: 600;
+    color: #654438;
+    font-size: 0.92rem;
 }
 
 .order-item span:nth-child(2) {
-    color: #6d3a1c;
+    color: #a45d4c;
     font-weight: 800;
+    font-size: 0.95rem;
 }
+
+/* ===== DIVIDER ===== */
 
 hr {
-    margin: 26px 0 18px;
+    margin: 25px 0 20px;
     border: none;
-    border-top: 1px solid #eadac8;
+    border-top: 2px dashed #d8b99f;
 }
 
-h3 {
-    margin: 16px 0 18px;
-    font-size: 1.4rem;
-    color: #4a2d24;
+/* ===== TOTAL ===== */
+
+.container > h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin: 18px 0 15px;
+    padding: 14px 17px;
+    background: #f8e8d7;
+    border: 2px solid #bd8c6c;
+    border-radius: 14px;
+    box-shadow: 3px 3px 0 #e4c2a6;
+    font-size: 1.05rem;
+    color: #70452f;
 }
+
+/* ===== CONFIRM BUTTON ===== */
 
 .confirm {
     width: 100%;
-    margin-top: 12px;
-    padding: 16px 20px;
-    background: linear-gradient(135deg, #7c412c 0%, #aa663d 100%);
-    color: white;
-    font-size: 1.08rem;
-    box-shadow: 0 12px 24px rgba(122, 70, 45, 0.22);
+    margin-top: 10px;
+    padding: 13px 18px;
+    background: #79503a;
+    color: #fffaf4;
+    border: 2px solid #593925;
+    border-radius: 13px;
+    font-size: 0.98rem;
+    font-weight: 700;
+    box-shadow: 3px 4px 0 #593925;
+    letter-spacing: 0.02em;
 }
 
+.confirm::before {
+    content: "♡ ";
+}
+
+.confirm:hover {
+    background: #966346;
+    transform: translateY(-2px);
+    box-shadow: 3px 6px 0 #593925;
+}
+
+.confirm:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+/* ===== EMPTY LIST ===== */
+
+#productList:empty::after {
+    content: "☕ กำลังเตรียมเมนูอร่อย ๆ ...";
+    display: block;
+    padding: 18px;
+    text-align: center;
+    color: #a17b62;
+    background: #fff7ed;
+    border: 1.5px dashed #c99a76;
+    border-radius: 13px;
+    font-size: 0.9rem;
+}
+
+#orderList:empty::after {
+    content: "♡ ยังไม่มีรายการสั่งซื้อ ♡";
+    display: block;
+    padding: 18px;
+    text-align: center;
+    color: #b17c78;
+    background: #fff4f2;
+    border: 1.5px dashed #d6a39a;
+    border-radius: 13px;
+    font-size: 0.9rem;
+}
+
+/* ===== MOBILE ===== */
+
 @media (max-width: 600px) {
+    body {
+        padding: 22px 12px;
+    }
+
     .container {
-        padding: 22px 16px;
+        padding: 25px 17px;
+        border-radius: 19px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+        margin-top: 22px;
     }
 
     .product,
     .order-item {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
+    }
+
+    .product-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .product-controls label,
+    .product-controls select {
+        width: 100%;
     }
 
     .product button,
@@ -196,7 +406,7 @@ h3 {
         width: 100%;
     }
 
-    .product-controls {
-        flex-direction: column;
+    .container > h3 {
+        font-size: 0.95rem;
     }
 }
